@@ -980,6 +980,10 @@ function get_scrap_item($ms_id){
 }
 
 
+
+
+
+
 //사업자 id를 넣으면 회원정보의 mb_parents(상위사업자) 를 가지고 단계를 구함
 function get_parents($mb_parents,$result = array()){ 
 	$is_debug = false;
@@ -988,17 +992,61 @@ function get_parents($mb_parents,$result = array()){
 	return $result;
 }
 
+function get_share_target($mb_id){
+	
+	/*
+	$mb = get_member($mb_id);
+	회원정보를 조회해서 카드정보가져옴..
+	카드정보를 이용해 적립 타겟을 가져옴.
+	- $target[0] = mb_id : 페이;
+	- $target[1] = mc_id : 가맹점;
+	- $target[2] = mc['mc_manager'] : 관리사업자;
+	$parents = get_parents(사업자아이디) 
+	- $target[3] = $parents[0] : 사업자;
+	- $target[4] = $parents[1] : 대리점사업자;
+	- $target[5] = $parents[2] : 지점사업자;
+	- $target[6] = $parents[3] : 지사사업자;
+	- $target[7] = $parents[4] : 광역사업자;
+	- $target[8] = mc의주소 : 지역지사;
+	- $target[9] = mc의주소 : 지역광역;
+	- $target[10] = 고정된mb_id : 고도;
+	- $target[11] =  : 단체;
+	- $target[12] =  : 단체소개자;
+	- $target[13] = moa : 본사;	
+	*/
+}
+
+/*
+- $point = $price;
+- $target = get_share_target();
+- $filter['project'] = "moapay";
+- $filter['type'] = "pointmall";
+*/
 //각 단계=>id 를 넣으면 적립금액및 퍼센트를 구하는 함수
-function get_share_point($data){
+function get_shares($point,$target, $filter){
+	/*
 	
+	$data[][id] = $target_value
+	$data[][point] = $point
+	$data[][msg] = $target_key 에 따라 적립포인트(사업자:242) 등 메세지수정.
 	
-	return $result;
+	*/
+	return $data;    
 }
 
 //적립해주는함수
 function point_share($data){
-
+	/*
+		for($i=0;$i<count($data);$i++){
+			
+			insert_point($data[$i]['id'],$data[$i]['point'],$data[$i]['msg']);
+			
+			
+			
+		}
 	
+	*/
+	return true;
 }
 
 ?>
