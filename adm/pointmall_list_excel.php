@@ -11,8 +11,8 @@ include_once ("./admin.head.php");
 
 <link rel="stylesheet" href="../plugin/bootstrap/css/bootstrap.min.css">
 <ul class="nav nav-tabs">
-  <li role="presentation"><a href="./smarthome_list.php">스마트홈쇼핑관리</a></li>
-  <li role="presentation" class="active"><a href="./smarthome_list_excel.php">스마트홈쇼핑관리 엑셀일괄등록</a></li>
+  <li role="presentation"><a href="./pointmall_list.php">포인트몰관리</a></li>
+  <li role="presentation" class="active"><a href="./pointmall_list_excel.php">포인트몰관리 엑셀일괄등록</a></li>
 </ul>
 
 <div class="new_win">
@@ -26,7 +26,7 @@ include_once ("./admin.head.php");
             엑셀파일을 저장하실 때는 <strong>Excel 97 - 2003 통합문서 (*.xls)</strong> 로 저장하셔야 합니다.
         </p>
         <p>
-        	<a href="../lib/Excel/orderlist_excel2.xls">스마트홈쇼핑관리 엑셀파일 다운로드</a><br />
+        	<a href="../lib/Excel/orderlist_excel2.xls">포인트몰관리 엑셀파일 다운로드</a><br />
         </p>
     </div>
 

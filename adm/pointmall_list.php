@@ -143,7 +143,7 @@ php_writeexcel http://www.bettina-attack.de/jonny/view.php/projects/php_writeexc
 include_once('../lib/Excel/php_writeexcel/class.writeexcel_workbook.inc.php');
 include_once('../lib/Excel/php_writeexcel/class.writeexcel_worksheet.inc.php');
 
-$fname = tempnam('../data/', "tmp-smarthomelist.xls");
+$fname = tempnam('../data/', "tmp-pointmalllist.xls");
 $workbook = new writeexcel_workbook($fname);
 $worksheet = $workbook->addworksheet();
 
@@ -302,15 +302,15 @@ if($arrange){
 //exit();
 $workbook->close();
 
-header("Content-Type: application/x-msexcel; name=\"smarthomelist-".date("ymd", time()).".xls\"");
-header("Content-Disposition: inline; filename=\"smarthomelist-".date("ymd", time()).".xls\"");
+header("Content-Type: application/x-msexcel; name=\"pointmalllist-".date("ymd", time()).".xls\"");
+header("Content-Disposition: inline; filename=\"pointmalllist-".date("ymd", time()).".xls\"");
 $fh=fopen($fname, "rb");
 fpassthru($fh);
 unlink($fname);
 //-------------------------------------------------------------------------------------------------------
 }else{
 
-$g4[title] = "가맹점관리";
+$g4[title] = "포인트몰관리";
 include_once ("./admin.head.php");
 
 $colspan = 16;
@@ -318,10 +318,10 @@ $colspan = 16;
 
 <script type="text/javascript" src="<?=$g4[path]?>/js/sideview.js"></script>
 <script type="text/javascript">
-var list_update_php = "smarthome_list_update.php";
-var list_update2_php = "smarthome_list_update2.php";
-var list_delete_php = "smarthome_list_delete.php";
-var list_update3_php = "smarthome_list_update3.php";
+var list_update_php = "pointmall_list_update.php";
+var list_update2_php = "pointmall_list_update2.php";
+var list_delete_php = "pointmall_list_delete.php";
+var list_update3_php = "pointmall_list_update3.php";
 </script>
 
 <script type="text/javascript">
@@ -336,8 +336,8 @@ function point_clear()
 
 <link rel="stylesheet" href="../plugin/bootstrap/css/bootstrap.min.css">
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="./smarthome_list.php">스마트홈쇼핑관리</a></li>
-  <li role="presentation"><a href="./smarthome_list_excel.php">스마트홈쇼핑관리 엑셀일괄등록</a></li>
+  <li role="presentation" class="active"><a href="./pointmall_list.php">포인트몰관리</a></li>
+  <li role="presentation"><a href="./pointmall_list_excel.php">포인트몰관리 엑셀일괄등록</a></li>
 </ul>
 
 <br/>
@@ -440,7 +440,7 @@ function point_clear()
     <td>결제상태<br/>적립번호(%)</td>
     <td>배송<br/>취소여부</td>
     <!--<td>수정</td>-->
-    <td><a href="./smarthome_form.php"><img src='<?=$g4[admin_path]?>/img/icon_insert.gif' border=0 title='추가'></a></td>
+    <td><a href="./pointmall_form.php"><img src='<?=$g4[admin_path]?>/img/icon_insert.gif' border=0 title='추가'></a></td>
 </tr>
 <tr><td colspan='<?=$colspan?>' class='line2'></td></tr>
 <?
@@ -479,11 +479,11 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
 
     $list = $i%2;
 
-     $s_mod = "<a href=\"./smarthome_form.php?$qstr&w=u&bn_id=$row[bn_id]\"><img src='img/icon_modify.gif' border=0 title='수정'></a>";
+     $s_mod = "<a href=\"./pointmall_form.php?$qstr&w=u&bn_id=$row[bn_id]\"><img src='img/icon_modify.gif' border=0 title='수정'></a>";
         //$s_del = "<a href=\"javascript:del('./member_delete.php?$qstr&w=d&mb_id=$row[mb_id]');\"><img src='img/icon_delete.gif' border=0 title='삭제'></a>";
 	 $s_del="";	
      //$s_del = "<a href=\"javascript:post_delete('point_delete.php', '$row[mb_id]');\"><img src='img/icon_delete.gif' border=0 title='삭제'></a>";
-	 $s_sms='<a onclick="window.open(\'./smarthome_sms.php?&i='.$i.'&bn_id='.$row[bn_id].'\',\'sms\',\'menubar=no,toolbar=no,scrollbars=no,width=450px,height=400px\');"><span style="color:red; font-size:12px">SMS</span></a>';
+	 $s_sms='<a onclick="window.open(\'./pointmall_sms.php?&i='.$i.'&bn_id='.$row[bn_id].'\',\'sms\',\'menubar=no,toolbar=no,scrollbars=no,width=450px,height=400px\');"><span style="color:red; font-size:12px">SMS</span></a>';
 	 //$s_sms = "<input type='image' id='subsms' src='./img/icon_help.gif' value='$row[bn_id]' onclick='subsms()'>";
 	 //"<input type='image' src='./img/icon_help.gif' onclick='subsms()'>";
 //$po_datetime = date("Y-m-d H:i:s", time() - (3600 * 24));

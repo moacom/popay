@@ -33,7 +33,7 @@ $wr_id = $_POST['wr_id'];
 
 if ($w == "") 
 {
-    $sql = "insert into g4_board_order2 set bn_datetime = '$bn_datetime', bo_table='$bo_table',wr_id='$wr_id',orderlist='$orderlist',mb_id='$mb_id',receive_id='$receive_id',owner_name='$owner_name',seller_name='$seller_name',receive_phone='$receive_phone',total_price='$total_price',pay_type='$pay_type',confirmdate=$confirmdate,is_confirm='$is_confirm',owner_address='$owner_address',is_cancel='$is_cancel',bn_type='smarthome',bn_project='adm',bn_rate='$bn_rate',bn_sr_id='$bn_sr_id'  ";
+    $sql = "insert into g4_board_order2 set bn_datetime = '$bn_datetime', bo_table='$bo_table',wr_id='$wr_id',orderlist='$orderlist',mb_id='$mb_id',receive_id='$receive_id',owner_name='$owner_name',seller_name='$seller_name',receive_phone='$receive_phone',total_price='$total_price',pay_type='$pay_type',confirmdate=$confirmdate,is_confirm='$is_confirm',owner_address='$owner_address',is_cancel='$is_cancel',bn_type='pointmall',bn_project='adm',bn_rate='$bn_rate',bn_sr_id='$bn_sr_id'  ";
     sql_query($sql);
 	$bn_id = mysql_insert_id();
 	insert_log($bn_id."번 직접주문을 생성하였습니다.","c");
@@ -64,5 +64,5 @@ $sql_common = " bn_datetime = '$bn_datetime',  bo_table='$bo_table',wr_id='$wr_i
 else
     alert("제대로 된 값이 넘어오지 않았습니다.");
 
-goto_url("./smarthome_form.php?w=u&bn_id=$bn_id&$qstr");
+goto_url("./pointmall_form.php?w=u&bn_id=$bn_id&$qstr");
 ?>

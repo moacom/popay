@@ -528,8 +528,8 @@ for ($i=0; $i<count($chk); $i++)
 
 
 if($msg){
-	alert($msg,"./smarthome_list.php?$qstr");
+	alert($msg,"./pointmall_list.php?$qstr");
 }else{
-	goto_url("./smarthome_list.php?$qstr");
+	goto_url("./pointmall_list.php?$qstr");
 }
 ?>

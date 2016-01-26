@@ -25,5 +25,5 @@ for ($i=0; $i<count($chk); $i++)
 //    sql_query($sql);
 }
 
-goto_url("./smarthome_list.php?$qstr");
+goto_url("./pointmall_list.php?$qstr");
 ?>

@@ -8,7 +8,7 @@ $token = get_token();
 
 //if ($is_admin != "super" && $w == "") alert("최고관리자만 접근 가능합니다.");
 
-$html_title = "직접주문관리";
+$html_title = "포인트몰관리";
 if ($w == "") 
 {
     $po_id_attr = "required";
@@ -176,7 +176,7 @@ include_once("./admin.head.php");
 
 <p align=center>
     <input type=submit class=btn1 accesskey='s' value='  확  인  '>&nbsp;
-    <input type=button class=btn1 value='  목  록  ' onclick="document.location.href='./smarthome_list.php?<?=$qstr?>';">
+    <input type=button class=btn1 value='  목  록  ' onclick="document.location.href='./pointmall_list.php?<?=$qstr?>';">
 </form>
 
 <script type='text/javascript'>
@@ -187,7 +187,7 @@ else
 
 function fgitc_check(f)
 {
-    f.action = "./smarthome_form_update.php";
+    f.action = "./pointmall_form_update.php";
     return true;
 }
 </script>
