@@ -1,12 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 4a32936841b172cb69e271e19dae5259e4dbcce4
 <meta charset="euc-kr">
 <title>무제 문서</title>
 <style>
@@ -23,13 +20,6 @@
 <iframe id="player" name="player" width="100%" height="315" src="http://www.youtube.com/embed/GUqY2xdY41w?enablejsapi=1&origin=http://example.com" frameborder="0" allowfullscreen></iframe>
 </div>
   
-<<<<<<< HEAD
-=======
-  
-  
-  
-  
->>>>>>> 4a32936841b172cb69e271e19dae5259e4dbcce4
 
 <script>
 //var tag = document.createElement('script');
