@@ -225,6 +225,7 @@ if($project_view)
 if($project['code']=="election") $project_menus[] = array('elect','후보자');
 
 //선거포털만을 위한 옵션
+$project['floors'] = array('사업자');
 if($project['code']=="moapay") $project['floors'] = array('사업자','대리점','지점');
 	
 //echo "[[[".$project_view[wr_1]."]]]";
