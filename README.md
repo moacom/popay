@@ -1,7 +1,7 @@
 # popay
 
 ## 진행과정
-- [] $project['floors'] 사업자, 대리점
+- [0] $project['floors'] 사업자, 대리점
 - get_parents()
 - get_sharetargets()
 - 마이몰과 포인트몰에서 물건을 구매할때 입금확인할때 처리해 주어야 하는부분
