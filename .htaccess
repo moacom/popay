@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ([0-9]+)$ bbs_shorten.php?wr_id=$1
+</IfModule>
+
+SetEnvIFNoCase Referer "emoa.kr" pass
+SetEnvIFNoCase Referer "moabiz.net" pass
+SetEnvIFNoCase Referer "binmall.kr" pass
+SetEnvIFNoCase Referer "mhm.kr" pass
+SetEnvIFNoCase Referer "onep.kr" pass
+SetEnvIFNoCase Referer "moapoint.kr" pass
+SetEnvIFNoCase Referer "moacard.com" pass
+SetEnvIFNoCase Referer "popay.kr" pass
+SetEnvIFNoCase Referer "^$" pass
+<FilesMatch ".(gif|jpg|png)$">
+Order deny,allow
+deny from all
+allow from env=pass
+</FilesMatch>
