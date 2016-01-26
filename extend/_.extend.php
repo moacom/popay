@@ -979,4 +979,26 @@ function get_scrap_item($ms_id){
     return $data;
 }
 
+
+//사업자 id를 넣으면 회원정보의 mb_parents(상위사업자) 를 가지고 단계를 구함
+function get_parents($mb_parents,$result = array()){ 
+	$is_debug = false;
+	$is_process = true;
+
+	return $result;
+}
+
+//각 단계=>id 를 넣으면 적립금액및 퍼센트를 구하는 함수
+function get_share_point($data){
+	
+	
+	return $result;
+}
+
+//적립해주는함수
+function point_share($data){
+
+	
+}
+
 ?>
