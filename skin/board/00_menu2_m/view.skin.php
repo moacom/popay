@@ -149,6 +149,10 @@ if($project_code=="one"&&$wr_id==1){
 $suffix="";
 if($_GET['mb_id']) $suffix="/".$_GET['mb_id'];
 
+$mem = get_member($_GET['mb_id']);
+$prefux_title = "";
+if($mem['mb_id']) $prefux_title = $mem['mb_name']."의 ";
+
 // 상단에 주소 나오도록
 if($project_code=="mcard"&&$wr_id==1){
 	$hdH2="<div style='margin:0 auto; text-align:center; font-size:14px'>http://popay.kr{$suffix}</div>";
@@ -178,7 +182,7 @@ $include_menu_name="_content.menu_card.php";
 
 //if($member['mb_id'] == "01054341861") $include_menu_name="_content.menu_test.php";
 
-$hdH1 = $header_title_text;
+$hdH1 = $prefux_title . $header_title_text;
 ?>
 <div data-role="page" data-theme="u" data-title="<?=$hdH1?>" >
 

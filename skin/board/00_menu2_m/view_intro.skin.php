@@ -7,6 +7,16 @@ if($project){
 	if($project[file][1][file]) $bg_name=$project_view[file][1][path]."/".$project_view[file][1][file];
 }
 
+$result_serial = get_serial($wr_id,$bo_table);
+
+
+$mem = get_member($_GET['mb_id']);
+$prefux_title = "";
+if($mem['mb_id']) {
+	$prefux_title = $mem['mb_name']."ÀÇ ";
+	$result_serial = $_GET['mb_id'];
+}
+
 ?>
 
 
@@ -28,10 +38,9 @@ if($project){
 
 <?=latest("mobile_banner_top", "i01_banner_".$project_code , 100 , 0, "RAND()", "", "myhome_intro","");?>
 <div style=" font-size:3.5em;   text-shadow:5px 5px 10px rgba(25,25,25,.4); background:rgba(25,25,25,.4); color:#ffffff; padding:4px 0px 0px 8px;">
-<?=$view[subject]?>
+<?=$prefux_title.$view[subject]?>
 </div>
 <?
-$result_serial = get_serial($wr_id,$bo_table);
 $url_short="http://".$_SERVER['HTTP_HOST']."/".$result_serial;
 //$url_short="http://emoa.kr/42354";
 
