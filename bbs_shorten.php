@@ -4,8 +4,9 @@ include_once("_common.php");
 
 
 
+$str_wr_id = $_GET['wr_id'];
 
-if($wr_id > '1000000000'){
+if (substr($str_wr_id,0,2)=="01") {
 
 
 $temp_domains = explode(".",$_SERVER[HTTP_HOST]);
@@ -17,7 +18,7 @@ $project = get_project($project_code);
 //var_dump($project);
 //echo $project['wr_1'];
 //echo $_GET['wr_id'];
-//exit;
+
 
 	//var_dump($project);
 	//exit;
@@ -27,7 +28,7 @@ $project = get_project($project_code);
 		//echo "Location:"."/bbs/board.m.php?bo_table=i01_menu_".$project['code']."&wr_id=1&is_intro=true&mb_id={$wr_id}";
 		//echo "프로젝트 존재";
 		//exit;
-		header("Location:"."/bbs/board.m.php?bo_table=i01_menu_".$project['wr_1']."&wr_id=1&is_intro=true&mb_id={$wr_id}");
+		header("Location:"."/bbs/board.m.php?bo_table=i01_menu_".$project['wr_1']."&wr_id=1&is_intro=true&mb_id={$str_wr_id}");
 		return;
 	}else{
 		//echo "프로젝트 미존재";
