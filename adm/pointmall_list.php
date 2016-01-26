@@ -73,7 +73,7 @@ switch ($payment) {  // 결제상태
 
 
 
-$sql_search .= "and bn_type = 'smarthome' ";
+$sql_search .= "and bn_type = 'pointmall' ";
 $qstr .= "&payment=".$payment;
 
 if($bn_datetime_s) {$sql_search .= " and (bn_datetime >= '$bn_datetime_s 00:00:00') ";$qstr.="&bn_datetime_s=$bn_datetime_s";}
