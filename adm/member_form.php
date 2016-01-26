@@ -165,6 +165,7 @@ include_once("./admin.head.php");
 
 <style>
 .type_tp th, .type_tp td{ background-color:#696; color:#FFF; padding:5px;}
+.type_pay th, .type_pay td { background-color:#e6646d; color:#FFF; padding:5px;}
 </style>
 
 
@@ -196,6 +197,32 @@ include_once("./admin.head.php");
 
 <tr><td colspan="4" style="border-top:1px solid silver; padding-top:6px;"></td></tr>
 
+
+
+
+<tr class="type_pay"><th colspan="4">페이사업자 전용</th></tr>
+
+<tr class='ht type_pay'>
+    <th>추천인 </th>
+    <td><input type=text name="mb_recom" id="mb_recom" value='<?php echo $mb[mb_recom] ?>'></td>
+    <th>상위사업자</th>
+    <td><input type=text name="mb_parent" id="mb_parent" value='<?php echo $mb[mb_parent] ?>'></td>
+</tr>
+
+<tr class='ht type_pay'>
+	<th>사업자직급</th>
+	<td>
+		<select name="mb_floor" id="mb_floor">
+        	<?php for($i=0;$i<count($project['floors']);$i++){?>
+            <option value="<?php echo $i?>" <?php echo ($mb[mb_floor] == $i)?"selected":""?>><?php echo $project['floors'][$i]?></option>
+            <?php }?>
+        </select>
+	</td>
+    <th></th>
+    <td></td>
+</tr>
+
+<tr><td colspan="4" style="border-top:1px solid silver; padding-top:6px;"></td></tr>
 
 
 
